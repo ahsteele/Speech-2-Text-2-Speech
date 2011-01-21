@@ -27,7 +27,6 @@ public class Speech2Text extends Activity implements OnClickListener {
         setContentView(R.layout.main);
         
         Button recordButton = (Button) findViewById(R.id.button_record);
-        
         mList = (ListView) findViewById(R.id.list);
         
         // check if recognition activity is present
@@ -43,12 +42,18 @@ public class Speech2Text extends Activity implements OnClickListener {
         	recordButton.setEnabled(false);
         	recordButton.setText("Recognizer not present");
         }
+        
+        Button speakButton = (Button) findViewById(R.id.button_speak);
+        speakButton.setOnClickListener(this);
     }
 
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.button_record) {
 			startVoiceRecognitionActivity();
+		}
+		else if (v.getId() == R.id.button_speak) {
+			
 		}
 	}
 
