@@ -47,8 +47,7 @@ public class Speech2Text extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		if (v.getId() == R.id.button_record)
-		{
+		if (v.getId() == R.id.button_record) {
 			startVoiceRecognitionActivity();
 		}
 	}
