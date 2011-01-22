@@ -8,11 +8,11 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/record_button" />
-<ListView android:id="@+id/list"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
 <Button android:id="@+id/button_speak"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/speak_button" />
+<ListView android:id="@+id/list"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
 </LinearLayout>
