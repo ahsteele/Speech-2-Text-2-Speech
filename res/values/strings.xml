@@ -2,5 +2,6 @@
 <resources>
     
     <string name="app_name">Speech 2 Text</string>
-<string name="record_button">Record</string>
+<string name="record_button">Record It!</string>
+<string name="speak_button">Say It!</string>
 </resources>
