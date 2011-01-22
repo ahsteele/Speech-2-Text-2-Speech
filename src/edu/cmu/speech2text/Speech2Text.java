@@ -24,6 +24,7 @@ public class Speech2Text extends Activity implements OnClickListener, OnInitList
 	private static final int TEXT_TO_SPEECH_CODE = 007;
 	
 	private ListView mList;
+	
 	private TextToSpeech tts;
 	
     /** Called when the activity is first created. */
@@ -64,10 +65,13 @@ public class Speech2Text extends Activity implements OnClickListener, OnInitList
 			startVoiceRecognitionActivity();
 		}
 		else if (v.getId() == R.id.button_speak) {
-			String text = mList.getTextFilter().toString();
+			String text = "";
+			for (int i = 0; i < mList.getCount(); i++) {
+				text += mList.getItemAtPosition(i).toString();
+			}
 			
 			if (text != null && text.length() > 0) {
-				Toast.makeText(Speech2Text.this, "Saying: " + text, Toast.LENGTH_LONG).show();
+				Toast.makeText(this, "Saying: " + text, Toast.LENGTH_LONG).show();
 				tts.speak(text, TextToSpeech.QUEUE_ADD, null);
 			}
 		}
@@ -105,11 +109,11 @@ public class Speech2Text extends Activity implements OnClickListener, OnInitList
 	@Override
 	public void onInit(int status) {
 		if (status == TextToSpeech.SUCCESS) {
-			Toast.makeText(Speech2Text.this,
+			Toast.makeText(this,
 					"Text-To-Speech engine is initialized", Toast.LENGTH_LONG).show();
 		}
 		else if (status == TextToSpeech.ERROR) {
-			Toast.makeText(Speech2Text.this,
+			Toast.makeText(this,
 					"Error occured while initializing Text-To-Speech engine",
 					Toast.LENGTH_LONG).show();
 		}
